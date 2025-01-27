@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='images/THEMELONAPPA.jpg') }}" alt="big and strong boy" style="height: 200px; width: 200px;">>
+    <div>
+        {% block content %}
+        <h1>greetings, oh great feared one</h1>
+        <p>{{ name }}, we welcome you</p>
+        {% endblock %}
+        <h2>speak, while you have the chance</h2>
+        <form action="/process" method="post">
+            <label for="user_input">enter DNA sequence:</label>
+            <input type="text" id="user_input" name="user_input" placeholder="type here pls" required>
+            <button type="submit">submit</button>
+        </form>
+    </div>
+    <style>
+        body {background-color: maroon; text-align: center; color: black;}
+    </style>
+    <script
+        type = "text/javascript"
+        src = "{{ url_for('static', filename = 'structure.js')}}"
+    ></script>
+</body>
+</html>
